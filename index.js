@@ -15,4 +15,11 @@ function add(a, b, callback){
 //call add passing the callbacks to it
 
 add(5, 10, happyPrint);
-add(11, 12, sadPrint)
+add(11, 12, sadPrint);
+
+ //prints current date
+function printDate(){
+   console.log(new Date().toLocaleTimeString());
+}
+      
+setInterval(printDate, 1000);
