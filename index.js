@@ -1,25 +1,34 @@
-function happyPrint(string){
- console.log("😀: "+string);
+let arr = [12, 33, 4, 5, -4, 8, 19, 25];
+                
+//map() creates a new array from the elements of one without changing the old one
+function double(num){
+  return num * 2;
 }
 
-function sadPrint(string){
- console.log("😢: "+string);
+let doubledArr = arr.map(double); 
+console.log(doubledArr);
+
+function isOdd(num){
+  return num%2 !== 0; 
+}
+//Filter takes a test condition and returns only the element which 
+//make the condition true
+let odds = arr.filter(isOdd);
+console.log(odds);
+
+//Returns true or false if any of the elements of the array 
+//meets a specified condition
+function has5Factor(ele){
+  return ele % 5 === 0;
 }
 
-//This high-order function adds 2 parameters and passes the answer to the callback
-function add(a, b, callback){
-   let ans = a + b;
-   callback(ans);// call the callback and pass the answer to it
+let hasFiveFactor = arr.some(has5Factor);
+console.log(hasFiveFactor);
+
+function intCompare(a, b){
+ return a - b;
 }
 
-//call add passing the callbacks to it
-
-add(5, 10, happyPrint);
-add(11, 12, sadPrint);
-
- //prints current date
-function printDate(){
-   console.log(new Date().toLocaleTimeString());
-}
-      
-setInterval(printDate, 1000);
+//sort function must return either 0, +ve, -ve
+let ascending = arr.sort(intCompare)
+console.log(ascending);
